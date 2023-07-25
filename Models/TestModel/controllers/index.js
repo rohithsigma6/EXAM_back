@@ -21,6 +21,7 @@ const getAllTests = async (req, res) => {
 
 const getTestById = async (req, res) => {
   try {
+    console.log(req.body)
     const test = await Test.findById({_id:req.body._id});
     if (!test) {
       return res.status(404).json({ message: 'Test not found' });
